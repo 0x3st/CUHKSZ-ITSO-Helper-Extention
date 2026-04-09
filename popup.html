@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CUHKSZ ITSO Helper</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="popup-shell">
+      <header class="brand-panel">
+        <img
+          class="brand-logo"
+          src="assets/cuhksz-logo.png"
+          alt="CUHK-Shenzhen"
+          width="697"
+          height="100"
+        />
+        <h1 class="hero-title">ITSO Helper</h1>
+        <p class="summary">This is an unofficial helper.</p>
+      </header>
+
+      <section class="display-panel">
+        <div id="progressView" class="display-view">
+          <div class="panel-head">
+            <p class="panel-label">Workflow Progress</p>
+            <p id="progressPercent" class="progress-percent">0%</p>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <p id="statusTitle" class="status-title">Idle</p>
+          <p id="statusDetail" class="status-detail">No test has been started yet.</p>
+        </div>
+
+        <div id="resultView" class="display-view is-hidden">
+          <div class="panel-head">
+            <p class="panel-label">Result</p>
+          </div>
+          <textarea
+            id="resultOutput"
+            class="result-output"
+            readonly
+            spellcheck="false"
+            placeholder="The formatted result will appear here after the test finishes."
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="actions-panel">
+        <div class="button-row">
+          <button id="launchButton" class="primary-button" type="button">Start Test</button>
+          <button id="copyButton" class="secondary-button" type="button" disabled>Copy Result</button>
+        </div>
+        <p id="hintText" class="hint">
+          Keep this window focused while the test runs.
+        </p>
+      </section>
+
+      <footer class="popup-footer">
+        <a
+          class="footer-link"
+          href="https://github.com/0x3st/CUHKSZ-ITSO-Helper-Extention/issues"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Report Bugs
+        </a>
+      </footer>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

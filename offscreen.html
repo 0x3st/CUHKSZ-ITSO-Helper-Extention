@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CUHK-Shenzhen Offscreen Runner</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #targetFrame {
+        width: 1px;
+        height: 1px;
+        border: 0;
+        position: fixed;
+        top: -10000px;
+        left: -10000px;
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe id="targetFrame" aria-hidden="true"></iframe>
+    <script src="offscreen.js"></script>
+  </body>
+</html>
