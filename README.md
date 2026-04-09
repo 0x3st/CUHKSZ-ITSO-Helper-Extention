@@ -75,6 +75,17 @@ That is closer to the browser's real network path than a plain DNS text lookup.
 
 The extension runs the site flow in a hidden document so it can automate the test without opening a visible site tab under normal conditions.
 
+## Privacy
+
+This extension is designed to run locally in the user's browser.
+
+- It reads network report fields and speed test results from `https://nt-r.cuhk.edu.cn/` and `https://nt-r.cuhk.edu.cn/speedtest`
+- It checks the actual server IP used by the browser request to determine whether the current network environment matches the expected CUHK-Shenzhen network target
+- It stores the current workflow state and the latest test result in the browser's local extension storage so the popup can display them
+- It writes to the clipboard only when the user clicks `Copy Result`
+- It does not send collected data to the developer's own server
+- It does not sell user data
+
 ## License
 
 MIT. See `LICENSE`.
@@ -153,6 +164,17 @@ MIT. See `LICENSE`.
 这种方式比单纯做一次 DNS 文本查询更接近浏览器真实访问站点时的网络路径。
 
 扩展会在隐藏文档中运行目标站点流程，因此正常情况下不会额外打开可见的网站标签页。
+
+## 隐私说明
+
+本扩展设计为仅在用户本地浏览器环境中运行。
+
+- 会读取 `https://nt-r.cuhk.edu.cn/` 和 `https://nt-r.cuhk.edu.cn/speedtest` 页面中的网络报告字段和测速结果
+- 会读取浏览器本次请求实际连接到的服务器 IP，以判断当前网络环境是否符合预期的港中深网络目标
+- 会将当前流程状态和最近一次测速结果保存在浏览器扩展本地存储中，用于弹窗展示
+- 只有在用户点击 `Copy Result` 时才会写入剪贴板
+- 不会将采集到的数据上传到开发者自有服务器
+- 不会出售用户数据
 
 ## 许可证
 
