@@ -1,0 +1,41 @@
+name: Release Extension
+
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Repository
+        uses: actions/checkout@v4
+
+      - name: Prepare Release Metadata
+        id: meta
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          ZIP_NAME="CUHKSZ-ITSO-Helper-${TAG}.zip"
+          echo "tag=${TAG}" >> "${GITHUB_OUTPUT}"
+          echo "zip_name=${ZIP_NAME}" >> "${GITHUB_OUTPUT}"
+
+      - name: Build Extension Package
+        run: |
+          mkdir -p dist/package
+          cp -R assets dist/package/
+          cp manifest.json background.js offscreen.html offscreen.js popup.css popup.html popup.js site-runner.js dist/package/
+          cd dist/package
+          zip -r -X "../${{ steps.meta.outputs.zip_name }}" .
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: ${{ steps.meta.outputs.tag }}
+          files: dist/${{ steps.meta.outputs.zip_name }}
+          generate_release_notes: true
