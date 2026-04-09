@@ -61,3 +61,7 @@ A browser extension cannot perform a native ICMP `ping`. This implementation use
 That is closer to the browser's real network path than a plain DNS text lookup.
 
 The extension runs the site flow in a hidden document so it can automate the test without opening a visible site tab under normal conditions.
+
+## License
+
+MIT. See `LICENSE`.
