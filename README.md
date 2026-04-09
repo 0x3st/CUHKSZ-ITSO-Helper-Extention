@@ -75,8 +75,6 @@ That is closer to the browser's real network path than a plain DNS text lookup.
 
 The extension runs the site flow in a hidden document so it can automate the test without opening a visible site tab under normal conditions.
 
-A local `.crx` package is not a reliable one-click installer target for Chrome on Windows and macOS. If a packaged `.crx` artifact is added in the future, treat it as an advanced distribution format for specific environments, not as the primary installation path.
-
 ## License
 
 MIT. See `LICENSE`.
@@ -155,8 +153,6 @@ MIT. See `LICENSE`.
 这种方式比单纯做一次 DNS 文本查询更接近浏览器真实访问站点时的网络路径。
 
 扩展会在隐藏文档中运行目标站点流程，因此正常情况下不会额外打开可见的网站标签页。
-
-本地 `.crx` 包并不能作为 Chrome 在 Windows 或 macOS 上稳定可用的一键安装方式。即使以后 workflow 额外产出 `.crx`，它也更适合作为特定环境下的高级分发格式，而不是主要安装路径。
 
 ## 许可证
 
