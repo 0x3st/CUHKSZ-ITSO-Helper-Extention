@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "CUHKSZ ITSO Helper",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Run the CUHK-Shenzhen network report and speed test, then show the result in the popup.",
   "minimum_chrome_version": "109",
   "permissions": [
